@@ -42,10 +42,10 @@ end
 # gem 'capistrano', group: :development 
 
 group :test do
-  gem "rspec-rails"
   gem 'debugger'
 end
 
 group :development do
   gem 'debugger'
+  gem "rspec-rails"
 end
