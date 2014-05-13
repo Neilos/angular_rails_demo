@@ -15,4 +15,6 @@
 //= require turbolinks
 //= require angular
 //= require angular-mocks
+//= require main
+//= require_tree ./angular_app_files
 //= require_tree .
