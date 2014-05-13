@@ -49,3 +49,5 @@ group :development do
   gem 'debugger'
   gem "rspec-rails"
 end
+
+gem 'angularjs-rails'
