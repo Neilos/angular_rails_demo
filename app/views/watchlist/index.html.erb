@@ -4,5 +4,11 @@
     <input type="text" ng-model='newSymbol' placeholder="Enter a symbol">
     <input type="submit" value="Add">
   </form>
-  {{ newSymbol  }}
+  <div ng-controller="StockCtrl">
+    <ul>
+      <li ng-repeat="stock in stocks">
+        {{stock.symbol}}, {{stock.name}}
+      </li>
+    </ul>
+  </div>
 </div>
