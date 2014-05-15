@@ -16,15 +16,6 @@
 //= require angular
 //= require angular-mocks
 //= require angular-resource
-//= require_self
 //= require main
 //= require_tree ./angular_app_files
 //= require_tree .
-
-// make angular work with asset pipeline
-$(document).on('page:load', function () {
-  $('[ng-app]').each(function () {
-    module = $(this).attr('ng-app');
-    angular.bootstrap(this, [module]);
-  });
-});
