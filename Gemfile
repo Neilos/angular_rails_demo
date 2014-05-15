@@ -51,4 +51,3 @@ group :development do
 end
 
 gem 'angularjs-rails'
-gem 'angular_rails_csrf'
