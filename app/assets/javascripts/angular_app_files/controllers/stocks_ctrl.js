@@ -5,6 +5,11 @@ app.controller('StockCtrl', ['$scope', 'Stock', '$filter', '$http', function($sc
   $scope.stocklist = [{symbol: "AAPL", name: "Apple Inc"},
                       {symbol: "MSFT", name: "Microsoft Inc"},
                       {symbol: "GOOG", name: "Google"}];
+  $scope.$watch('newCompany', function(){
+    if ($scope.newCompany != "" & $scope.newCompany != null) {
+      $scope.createStock();
+    }
+  });
 
   $scope.createStock = function() {
     var attr ={};

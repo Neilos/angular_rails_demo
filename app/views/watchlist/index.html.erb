@@ -6,7 +6,6 @@
         <option value=""></option>
         <option ng-repeat="stock in stocklist" value="{{stock.symbol}}">{{stock.name}}</option>
       </select>
-      <input type="submit" value="Add">
     </form>
      <div ng-show="loading" id="loading">
       Loading, please wait!
