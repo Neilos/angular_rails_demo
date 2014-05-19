@@ -15,8 +15,15 @@
     </div>
     <ul>
       <li ng-repeat="stock in stocks">
-        {{stock.symbol}}, {{stock.name}}, {{stock.bid}}, {{stock.ask}}, {{stock.year_low}}, {{stock.year_high}}
-        <a href="" ng-click="deleteStock(stock.id, $index)">Delete</a>
+        <div id='symbol'>{{stock.symbol}}</div>
+        <div id='name'>{{stock.name}}</div>
+        <span>Bid: {{stock.bid}}</span>
+        <span>Ask: {{stock.ask}}</span>
+        <span>Year Low: {{stock.year_low}}</span>
+        <span>Year High: {{stock.year_high}}</span>
+        <div id="links">
+          <a href="" ng-click="deleteStock(stock.id, $index)">Delete</a>
+        </div>
       </li>
     </ul>
   </div>
