@@ -1,10 +1,14 @@
 app.controller('StockCtrl', ['$scope', 'Stock', '$filter', '$http', function($scope, Stock, $filter, $http) {
   $scope.stocks = Stock.all();
   $scope.error = false;
+  $scope.select2Options = {};
+  $scope.stocklist = [{symbol: "AAPL", name: "Apple Inc"},
+                      {symbol: "MSFT", name: "Microsoft Inc"},
+                      {symbol: "GOOG", name: "Google"}];
 
   $scope.createStock = function() {
     var attr ={};
-    attr.symbol = $filter('uppercase')($scope.newSymbol);
+    attr.symbol = $filter('uppercase')($scope.newCompany);
     $http({method: 'GET', url: "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20WHERE%20symbol%3D" + "'" + attr.symbol + "'" + "&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys"
     }).success(function(data, status, headers, config){
       $scope.error = false;

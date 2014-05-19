@@ -1,4 +1,4 @@
-var app = angular.module('StockWatch', ['ngResource']);
+var app = angular.module('StockWatch', ['ngResource', 'ui.select2']);
 
 // make angular work with turbolinks
 $(document).on('page:load', function () {
