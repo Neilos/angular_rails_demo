@@ -8,6 +8,9 @@
       </select>
       <input type="submit" value="Add">
     </form>
+     <div ng-show="loading" id="loading">
+      Loading, please wait!
+    </div>
     <div ng-show="error">
       There was a problem with the Yahoo Finace API. Please try again later.
     </div>
