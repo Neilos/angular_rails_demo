@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
@@ -52,3 +53,5 @@ end
 
 gem 'angularjs-rails'
 gem 'angular_rails_csrf'
+gem 'rails-assets-select2'
+gem 'rails-assets-angular-ui-select2'
