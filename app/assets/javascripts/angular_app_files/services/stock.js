@@ -2,7 +2,7 @@ app.factory('Stock', ['$resource', function($resource) {
   function Stock() {
     this.service = $resource('api/stocks/:stockId',
                               {stockId: '@id'},
-                              {'update': {method: 'PUT'}}
+                              {'update': {method: 'PATCH'}}
                             );
   };
   Stock.prototype.all = function() {
