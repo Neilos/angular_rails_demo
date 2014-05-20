@@ -22,6 +22,7 @@
         <span>Year Low: {{stock.year_low}}</span>
         <span>Year High: {{stock.year_high}}</span>
         <div id="links">
+          <a href="" ng-click="updateStock(stock.id, $index)">Update</a>
           <a href="" ng-click="deleteStock(stock.id, $index)">Delete</a>
         </div>
       </li>

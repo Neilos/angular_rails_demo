@@ -26,6 +26,19 @@ app.controller('StockCtrl', ['$scope', 'Stock', '$filter', '$http', '$q', functi
       );
   };
 
+  $scope.updateStock = function(id, idx) {
+    var stock = $scope.stocks[idx];
+    $scope.fetchYahooFinanceData(stock.symbol).then(
+      function(result) {
+        $scope.error = false;
+        result.id = stock.id
+        $scope.stocks[idx] = Stock.update(result);
+      },
+      function(error) {
+        $scope.error = true;
+      });
+  };
+
   $scope.fetchYahooFinanceData = function(symbol) {
     var deferred = $q.defer();
     var stock = {};
