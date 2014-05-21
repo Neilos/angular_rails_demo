@@ -19,6 +19,5 @@
 //= require angular-mocks
 //= require angular-resource
 //= require angular-ui-select2
-//= require main
-//= require_tree ./angular_app_files
+//= require_tree ./angular
 //= require_tree .
