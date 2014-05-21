@@ -11,6 +11,10 @@ app.controller('StockCtrl', ['$scope', 'Stock', '$filter', '$http', '$q', functi
     }
   });
 
+  $scope.requestOHLC = function(stockid) {
+    return Stock.ohlc(stockid);
+  };
+
   $scope.createStock = function() {
     $scope
       .fetchYahooFinanceData($filter('uppercase')($scope.newCompany))
