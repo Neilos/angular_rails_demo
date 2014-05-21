@@ -6,14 +6,38 @@ app.directive("myChart", function() {
         if (scope.showStockChart == true) {
           scope.loadingChart = true;
           var ohlc = [];
-          scope.requestOHLC(scope.$eval(attrs.stockid)).$promise.then(function(res){
-            ohlc = res.ohlc;
+          scope.requestOHLC(scope.$eval(attrs.stockid)).$promise.then(function(result){
+            ohlc = result.ohlc;
             angular.forEach(ohlc, function(value, index) {
               ohlc[index][0] = Date.parse(value[0]);
             })
             element.highcharts('StockChart', {
               rangeSelector: {
-                selected: 2
+                buttons: [{
+                  type: 'week',
+                  count: 1,
+                  text: '1w'
+                }, {
+                  type: 'month',
+                  count: 1,
+                  text: '1m'
+                }, {
+                  type: 'month',
+                  count: 3,
+                  text: '3m'
+                }, {
+                  type: 'month',
+                  count: 6,
+                  text: '6m'
+                }, {
+                  type: 'ytd',
+                  text: 'YTD'
+                }, {
+                  type: 'all',
+                  text: 'All'
+                }],
+                selected: 2,
+                inputEnabled: window.innerWidth > 650
               },
               title: {
                 text: scope.$eval(attrs.stockname)
@@ -24,26 +48,14 @@ app.directive("myChart", function() {
               series: [{
                 type: 'candlestick',
                 name: scope.$eval(attrs.stocksymbol),
-                data: ohlc,
-                dataGrouping: {
-                  units: [[
-                         'day',
-                         [1]
-                  ], [
-                         'week',
-                         [1]
-                  ], [
-                         'month',
-                         [1,2,3,4,6]
-                  ]]
-                }
+                data: ohlc
               }]
             });  
           }); 
 
           scope.loadingChart = false;
         } else {
-          // delete chart
+          // remove chart
         }
       });
     }
