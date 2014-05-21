@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require select2
+//= require highstock
 //= require angular
 //= require angular-mocks
 //= require angular-resource
