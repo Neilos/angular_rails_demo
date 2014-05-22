@@ -55,3 +55,5 @@ gem 'angularjs-rails'
 gem 'angular_rails_csrf'
 gem 'rails-assets-select2'
 gem 'rails-assets-angular-ui-select2'
+
+gem 'rails_karma'
