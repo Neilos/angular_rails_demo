@@ -57,4 +57,6 @@ group :test, :development do
   gem 'debugger'
   gem "rspec-rails"
   gem 'rails-assets-angular-mocks'
+  gem 'konacha'
+  gem 'selenium-webdriver'
 end
